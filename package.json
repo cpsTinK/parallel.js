@@ -1,57 +1,53 @@
 {
-	"name": "paralleljs",
-	"version": "0.2.1",
-	"author": "Adam Savitzky <adam.savitzky@gmail.com>",
-	"contributors": [
-		"Sebastian Mayr <sebmaster16@gmail.com> (http://s3bmaster.blogspot.co.at/)"
-	],
-	"description": "parallel.js enables easy multi-thread processing in javascript",
-	"main": "lib/parallel.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/adambom/parallel.js.git"
-	},
-	"directories": {
-		"lib": "lib",
-		"test": "test"
-	},
-	"keywords": [
-		"parallel",
-		"spawn",
-		"map",
-		"thread",
-		"parallel.js",
-		"workers",
-		"webworkers"
-	],
-	"devDependencies": {
-		"jasmine-node": "x",
-		"q": "x"
-	},
-	"license": "BSD",
-	"scripts": {
-		"test": "jasmine-node --verbose test/specs"
-	},
-	"engines": {
-		"node": ">=0.9.10"
-	},
-	"testling" : {
-		"scripts": [
-			"lib/parallel.js",
-			"test/jasmine/jasmine.js",
-			"test/jasmine/jasmine.tap_reporter.js",
-			"test/specs/*.js",
-			"test/runner.js"
-		],
-		"browsers": [
-			"ie/9..latest",
-			"chrome/22..latest",
-			"firefox/16..latest",
-			"safari/latest",
-			"opera/11.0..latest",
-			"iphone/6",
-			"ipad/6",
-			"android-browser/latest"
-		]
-	}
+  "name": "paralleljs",
+  "version": "0.3.0",
+  "author": "Adam Savitzky <adam.savitzky@gmail.com>",
+  "contributors": [
+    "Sebastian Mayr <sebmaster16@gmail.com> (http://s3bmaster.blogspot.co.at/)",
+    "Amila Welihinda <amilajack@gmail.com> (https://amilajack.com)"
+  ],
+  "description": "parallel.js enables easy multi-thread processing in javascript",
+  "license": "MIT",
+  "scripts": {
+    "install": "neon build --release",
+    "lint": "eslint .",
+    "test": "yarn lint"
+  },
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parallel-js/parallel.js.git"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [
+    "parallel",
+    "spawn",
+    "map",
+    "thread",
+    "parallel.js",
+    "workers",
+    "webworkers"
+  ],
+  "dependencies": {
+    "neon-cli": "^0.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.9.0",
+    "eslint-config-bliss": "^3.1.1",
+    "jest": "^23.6.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "bliss"
+    ],
+    "rules": {
+      "no-new": "off"
+    }
+  }
 }
